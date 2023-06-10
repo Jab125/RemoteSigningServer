@@ -1,0 +1,32 @@
+
+buildscript {
+    dependencies {
+        classpath "me.modmuss50:remotesign:0.4.0"
+    }
+}
+
+plugins {
+    id 'java'
+}
+apply plugin: "me.modmuss50.remotesign"
+group 'com.jab125'
+version '1.0-SNAPSHOT'
+
+remoteSign {
+    requestUrl = "http://localhost:4000/sign"
+    jarAuthKey = "2147483647"
+    pgpAuthKey = "YOLO"
+    sign jar
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}

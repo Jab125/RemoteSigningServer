@@ -1,0 +1,39 @@
+
+buildscript {
+    dependencies {
+        classpath "me.modmuss50:remotesign:0.4.0"
+    }
+}
+
+plugins {
+    id 'java'
+}
+apply plugin: "me.modmuss50.remotesign"
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    runtimeOnly "org.slf4j:slf4j-simple:1.8.0-beta4"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'io.javalin:javalin:3.13.7'
+    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.70'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+remoteSign {
+    requestUrl = "http://localhost:4000/sign"
+    jarAuthKey = "2147483647"
+    pgpAuthKey = "YOLO"
+    sign jar
+}
