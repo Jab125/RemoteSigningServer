@@ -10,8 +10,8 @@ plugins {
 }
 apply plugin: "me.modmuss50.remotesign"
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'com.jab125'
+version '0.1.0'
 
 repositories {
     mavenCentral()
@@ -22,9 +22,6 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation 'io.javalin:javalin:3.13.7'
-    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
-    implementation 'org.bouncycastle:bcprov-jdk15on:1.70'
-
 }
 
 test {
