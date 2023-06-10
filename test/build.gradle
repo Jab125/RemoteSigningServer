@@ -14,8 +14,8 @@ version '1.0-SNAPSHOT'
 
 remoteSign {
     requestUrl = "http://localhost:4000/sign"
-    jarAuthKey = "2147483647"
-    pgpAuthKey = "YOLO"
+    jarAuthKey = "JAR"
+    pgpAuthKey = "PGP"
     sign jar
 }
 repositories {
